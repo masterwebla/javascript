@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Condicionales con Javascript</title>
+	<meta charset="utf-8">
+	<script>
+		function diagnosticar(){
+			var peso = document.getElementById("peso").value;
+			var estatura = document.getElementById("estatura").value;
+			peso = parseFloat(peso);
+			estatura = parseFloat(estatura);
+			var imc = parseInt(peso/(estatura * estatura));
+			console.log("IMC: "+imc);
+			document.getElementById("imc").innerHTML = imc;
+			if(imc<19){
+				document.getElementById("diagnostico").innerHTML = "Tu peso está por debajo de lo normal y deberías consultar con un especialista";
+			}
+			if(imc>=19 && imc<=24){
+				document.getElementById("diagnostico").innerHTML = "Tu peso es el ideal, tienes que mantenerlo";
+			}
+			if(imc>=25 && imc<=30){
+				document.getElementById("diagnostico").innerHTML = "Tienes sobrepeso y deberías incorporar hábitos saludables";
+			}
+			if(imc>30){
+				document.getElementById("diagnostico").innerHTML = "Sufres de obesidad y debes pedir ayuda lo más rápido posible.";
+			}
+		}
+	</script>
+</head>
+<body>
+	<p>Ingrese su peso (kg): <input type="number" id="peso"></p>
+	<p>Ingrese su estatura (m): <input type="number" id="estatura"></p>
+	<button onclick="diagnosticar()">Diagnosticar</button>
+	<p id="imc"></p>
+	<p id="diagnostico">Aqui irá su diagnóstico</p>
+</body>
+</html>

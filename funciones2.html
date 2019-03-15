@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funciones con Javascript</title>
+	<meta charset="utf-8">
+	<script>
+		function miCalculadora(operador){
+			//Traer el valor de los inputs a partir de su ID
+			var n1 = document.getElementById("numero1").value;
+			var n2 = document.getElementById("numero2").value;
+			//Convertir el valor obtenido de String a Integer
+			//n1 = parseInt(n1);
+			//n2 = parseInt(n2);
+			//Ejecutar la operación matemática
+			var res = eval(n1 + operador + n2);
+			//Ingresar al ID Resultado el resultado de la operacion matemática
+			document.getElementById("resultado").innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	
+	<form>
+		Numero 1: <input type="number" id="numero1"><br>
+		Numero 2: <input type="number" id="numero2"><br>
+	</form>
+	<button onmouseover="miCalculadora('+')"> + </button>
+	<button onmouseover="miCalculadora('-')"> - </button>
+	<button onmouseover="miCalculadora('*')"> * </button>
+	<button onmouseover="miCalculadora('/')"> / </button><br>
+	Resultado: <span id="resultado">aqui ira el resultado</span><br>
+</body>
+</html>
